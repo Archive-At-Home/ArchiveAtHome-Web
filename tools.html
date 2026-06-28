@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>实用小工具 - Archive-At-Home</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+        body { font-family: 'Inter', sans-serif; }
+    </style>
+</head>
+<body class="bg-slate-900 text-slate-100 min-h-screen flex flex-col justify-between selection:bg-indigo-500 selection:text-white">
+
+    <div class="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-7xl h-[500px] pointer-events-none overflow-hidden opacity-20 z-0">
+        <div class="absolute -top-40 right-1/4 w-[500px] h-[500px] bg-indigo-500 rounded-full blur-[120px]"></div>
+        <div class="absolute -top-20 left-1/4 w-[400px] h-[400px] bg-purple-500 rounded-full blur-[100px]"></div>
+    </div>
+
+    <header class="relative z-10 max-w-7xl w-full mx-auto px-6 py-6 flex justify-between items-center">
+        <div class="flex items-center space-x-3">
+            <div class="bg-indigo-600 p-2 rounded-xl shadow-lg shadow-indigo-600/30">
+                <i data-lucide="archive" class="w-6 h-6 text-white"></i>
+            </div>
+            <span class="text-xl font-bold tracking-tight bg-gradient-to-r from-white to-slate-400 bg-clip-text text-transparent">Archive-At-Home</span>
+        </div>
+        <div>
+            <a href="index.html" class="flex items-center space-x-2 text-sm font-medium text-slate-400 hover:text-white transition bg-slate-800/50 hover:bg-slate-800 border border-slate-700/50 px-4 py-2 rounded-xl backdrop-blur-sm">
+                <i data-lucide="arrow-left" class="w-4 h-4"></i>
+                <span>返回首页</span>
+            </a>
+        </div>
+    </header>
+
+    <main class="relative z-10 max-w-5xl w-full mx-auto px-6 py-12 flex-grow">
+        
+        <div class="text-center max-w-2xl mx-auto mb-12">
+            <h1 class="text-3xl md:text-4xl font-extrabold tracking-tight mb-4 bg-gradient-to-b from-white to-slate-300 bg-clip-text text-transparent">
+                工具与资源聚合
+            </h1>
+            <p class="text-slate-400">
+                提供实用的辅助归档小工具以及精选的社区公益资源渠道。
+            </p>
+        </div>
+
+        <div class="mb-12 bg-amber-500/10 border border-amber-500/20 text-amber-400/90 rounded-2xl p-4 flex items-start space-x-3 text-sm max-w-4xl mx-auto backdrop-blur-sm">
+            <i data-lucide="alert-triangle" class="w-5 h-5 shrink-0 mt-0.5 text-amber-500"></i>
+            <p><strong>安全提示：</strong> 第三方工具及账户交易属于外部链接，请注意保护个人隐私与财产安全。本站仅作资源索引，不对第三方服务做任何形式的担保。</p>
+        </div>
+
+        <section class="max-w-4xl mx-auto mb-14">
+            <div class="flex items-center space-x-2.5 mb-6 border-b border-slate-800 pb-3">
+                <div class="bg-emerald-500/10 p-1.5 rounded-lg text-emerald-400">
+                    <i data-lucide="wrench" class="w-5 h-5"></i>
+                </div>
+                <h2 class="text-xl font-bold text-slate-200">实用工具</h2>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="group bg-slate-800/40 border border-slate-700/50 p-6 rounded-2xl backdrop-blur-sm hover:border-emerald-500/50 transition-all duration-300 flex flex-col justify-between hover:shadow-xl hover:shadow-emerald-500/5">
+                    <div>
+                        <div class="flex items-center justify-between mb-4">
+                            <div class="bg-emerald-500/10 p-3 rounded-xl text-emerald-400 group-hover:bg-emerald-500 group-hover:text-white transition-all duration-300">
+                                <i data-lucide="cookie" class="w-6 h-6"></i>
+                            </div>
+                            <span class="text-xs font-medium px-2.5 py-1 rounded-full bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">主入口</span>
+                        </div>
+                        <h3 class="text-lg font-bold text-white mb-2 group-hover:text-emerald-400 transition-colors">里站 Cookie 获取</h3>
+                        <p class="text-sm text-slate-400 leading-relaxed mb-6">
+                            尝试通过多个地区的 IP 获取 ExHentai 登录 Cookie，解决部分地区网络无法正常访问或导出的难题。安全透明，不保存任何用户凭据。
+                        </p>
+                    </div>
+                    <a href="https://excookie.mhdy.net" target="_blank" rel="noopener noreferrer" 
+                       class="flex items-center justify-center space-x-2 bg-slate-700/50 hover:bg-emerald-600 text-slate-200 hover:text-white text-sm font-semibold py-3 px-4 rounded-xl transition-all duration-200">
+                        <span>打开工具网页 (入口一)</span>
+                        <i data-lucide="external-link" class="w-4 h-4"></i>
+                    </a>
+                </div>
+
+                <div class="group bg-slate-800/40 border border-slate-700/50 p-6 rounded-2xl backdrop-blur-sm hover:border-emerald-500/50 transition-all duration-300 flex flex-col justify-between hover:shadow-xl hover:shadow-emerald-500/5">
+                    <div>
+                        <div class="flex items-center justify-between mb-4">
+                            <div class="bg-emerald-500/10 p-3 rounded-xl text-emerald-400 group-hover:bg-emerald-500 group-hover:text-white transition-all duration-300">
+                                <i data-lucide="cookie" class="w-6 h-6"></i>
+                            </div>
+                            <span class="text-xs font-medium px-2.5 py-1 rounded-full bg-slate-800 text-slate-400 border border-slate-700">备用入口</span>
+                        </div>
+                        <h3 class="text-lg font-bold text-white mb-2 group-hover:text-emerald-400 transition-colors">里站 Cookie 获取 (备用)</h3>
+                        <p class="text-sm text-slate-400 leading-relaxed mb-6">
+                            另一个备用的 ExHentai 登录 Cookie 提取通道。第一个获取不到可以试试这个
+                        </p>
+                    </div>
+                    <a href="https://exhentai-igneous-generator.pages.dev/" target="_blank" rel="noopener noreferrer" 
+                       class="flex items-center justify-center space-x-2 bg-slate-700/50 hover:bg-emerald-600 text-slate-200 hover:text-white text-sm font-semibold py-3 px-4 rounded-xl transition-all duration-200">
+                        <span>打开工具网页 (入口二)</span>
+                        <i data-lucide="external-link" class="w-4 h-4"></i>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <section class="max-w-4xl mx-auto mb-6">
+            <div class="flex items-center space-x-2.5 mb-6 border-b border-slate-800 pb-3">
+                <div class="bg-indigo-500/10 p-1.5 rounded-lg text-indigo-400">
+                    <i data-lucide="store" class="w-5 h-5"></i>
+                </div>
+                <h2 class="text-xl font-bold text-slate-200">推荐商店 / 渠道</h2>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="group bg-slate-800/40 border border-slate-700/50 p-6 rounded-2xl backdrop-blur-sm hover:border-indigo-500/50 transition-all duration-300 flex flex-col justify-between hover:shadow-xl hover:shadow-indigo-500/5">
+                    <div>
+                        <div class="flex items-center justify-between mb-4">
+                            <div class="bg-indigo-500/10 p-3 rounded-xl text-indigo-400 group-hover:bg-indigo-500 group-hover:text-white transition-all duration-300">
+                                <i data-lucide="shopping-cart" class="w-6 h-6"></i>
+                            </div>
+                            <span class="text-xs font-medium px-2.5 py-1 rounded-full bg-slate-700 text-slate-300">真人对接</span>
+                        </div>
+                        <h3 class="text-lg font-bold text-white mb-2 group-hover:text-indigo-400 transition-colors">EHentai 里站账户购买</h3>
+                        <p class="text-sm text-slate-400 leading-relaxed mb-6">
+                            便捷的 Telegram 交易渠道。提供稳定可靠的里站特权账户购买与售前咨询服务，轻松解决新用户注册困难与里站限制。
+                        </p>
+                    </div>
+                    <a href="https://t.me/momo_pm" target="_blank" rel="noopener noreferrer" 
+                       class="flex items-center justify-center space-x-2 bg-slate-700/50 hover:bg-indigo-600 text-slate-200 hover:text-white text-sm font-semibold py-3 px-4 rounded-xl transition-all duration-200">
+                        <span>前往 Telegram 联系</span>
+                        <i data-lucide="external-link" class="w-4 h-4"></i>
+                    </a>
+                </div>
+                
+                <div class="group bg-slate-800/40 border border-slate-700/50 p-6 rounded-2xl backdrop-blur-sm hover:border-indigo-500/50 transition-all duration-300 flex flex-col justify-between hover:shadow-xl hover:shadow-indigo-500/5">
+                    <div>
+                        <div class="flex items-center justify-between mb-4">
+                            <div class="bg-indigo-500/10 p-3 rounded-xl text-indigo-400 group-hover:bg-indigo-500 group-hover:text-white transition-all duration-300">
+                                <i data-lucide="shopping-cart" class="w-6 h-6"></i>
+                            </div>
+                            <span class="text-xs font-medium px-2.5 py-1 rounded-full bg-slate-700 text-slate-300">自动化网页</span>
+                        </div>
+                        <h3 class="text-lg font-bold text-white mb-2 group-hover:text-indigo-400 transition-colors">EHentai 里站账户购买</h3>
+                        <p class="text-sm text-slate-400 leading-relaxed mb-6">
+                            除了购买里站账号外，您还可以在这里选择购买 GP/Credits/Hath
+                        </p>
+                    </div>
+                    <a href="https://shop.mhdy.net/" target="_blank" rel="noopener noreferrer" 
+                       class="flex items-center justify-center space-x-2 bg-slate-700/50 hover:bg-indigo-600 text-slate-200 hover:text-white text-sm font-semibold py-3 px-4 rounded-xl transition-all duration-200">
+                        <span>前往 垃圾小店</span>
+                        <i data-lucide="external-link" class="w-4 h-4"></i>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="relative z-10 border-t border-slate-800/60 bg-slate-900/50 backdrop-blur-md">
+        <div class="max-w-7xl mx-auto px-6 py-6 flex flex-col sm:flex-row justify-between items-center text-sm text-slate-500">
+            <p>© 2026 Archive-At-Home. Open Source Project.</p>
+            <p class="mt-2 sm:mt-0 flex items-center">
+                Made with <i data-lucide="heart" class="w-4 h-4 text-rose-500 mx-1 fill-rose-500"></i> for simpler archiving.
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+</html>
