@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>Analytics Dashboard - ArchiveAtHome</title>
+<script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-slate-900 text-slate-100 min-h-screen p-10">
+
+<div class="max-w-5xl mx-auto space-y-6">
+
+<!-- 标题 -->
+<div class="flex items-center justify-between">
+  <h1 class="text-2xl font-bold">📊 数据分析面板 v2</h1>
+  <span class="text-xs text-slate-400">Cloudflare KV Analytics</span>
+</div>
+
+<!-- 顶部统计卡 -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+
+  <div class="bg-slate-800 p-5 rounded-2xl border border-slate-700">
+    <div class="text-sm text-slate-400">总点击</div>
+    <div id="total" class="text-2xl font-bold text-indigo-400">-</div>
+  </div>
+
+  <div class="bg-slate-800 p-5 rounded-2xl border border-slate-700">
+    <div class="text-sm text-slate-400">最高入口</div>
+    <div id="top" class="text-xl font-bold text-emerald-400">-</div>
+  </div>
+
+  <div class="bg-slate-800 p-5 rounded-2xl border border-slate-700">
+    <div class="text-sm text-slate-400">入口数量</div>
+    <div id="count" class="text-xl font-bold text-amber-400">4</div>
+  </div>
+
+</div>
+
+<!-- 排行 -->
+<div class="bg-slate-800 rounded-2xl border border-slate-700 p-6">
+
+  <h2 class="font-semibold mb-4">🔥 入口点击排行</h2>
+
+  <div id="list" class="space-y-3"></div>
+
+</div>
+
+</div>
+
+<script>
+
+const names = {
+  "cookie-main": "Cookie 主入口",
+  "cookie-backup": "Cookie 备用",
+  "telegram-shop": "Telegram 商店",
+  "mhdy-shop": "垃圾小店"
+};
+
+async function load() {
+
+  const res = await fetch('/api/stats');
+  const data = await res.json();
+
+  let total = 0;
+  let topKey = "";
+  let topVal = 0;
+
+  const arr = Object.entries(data)
+    .sort((a,b)=>b[1]-a[1]);
+
+  arr.forEach(([k,v])=>{
+    total += v;
+    if (v > topVal) {
+      topVal = v;
+      topKey = k;
+    }
+  });
+
+  // 顶部数据
+  document.getElementById('total').innerText = total;
+  document.getElementById('top').innerText = names[topKey] || topKey;
+
+  // 列表
+  const box = document.getElementById('list');
+  box.innerHTML = '';
+
+  arr.forEach(([key,val])=>{
+
+    const percent = total ? Math.round((val/total)*100) : 0;
+
+    const div = document.createElement('div');
+
+    div.className = "bg-slate-900 p-4 rounded-xl border border-slate-700";
+
+    div.innerHTML = `
+      <div class="flex justify-between mb-2">
+        <div>
+          <div class="font-medium">${names[key] || key}</div>
+          <div class="text-xs text-slate-500">${key}</div>
+        </div>
+        <div class="text-indigo-400 font-bold">${val}</div>
+      </div>
+
+      <div class="w-full bg-slate-700 rounded-full h-2">
+        <div class="bg-indigo-500 h-2 rounded-full" style="width:${percent}%"></div>
+      </div>
+    `;
+
+    box.appendChild(div);
+  });
+
+}
+
+load();
+setInterval(load, 5000);
+
+</script>
+
+</body>
+</html>

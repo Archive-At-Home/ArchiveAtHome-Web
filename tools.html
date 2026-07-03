@@ -71,7 +71,7 @@
                             尝试通过多个地区的 IP 获取 ExHentai 登录 Cookie，解决部分地区网络无法正常访问或导出的难题。安全透明，不保存任何用户凭据。
                         </p>
                     </div>
-                    <a href="https://excookie.mhdy.net" target="_blank" rel="noopener noreferrer" 
+                    <a href="https://excookie.mhdy.net" onclick="track('cookie-main')" target="_blank" rel="noopener noreferrer" 
                        class="flex items-center justify-center space-x-2 bg-slate-700/50 hover:bg-emerald-600 text-slate-200 hover:text-white text-sm font-semibold py-3 px-4 rounded-xl transition-all duration-200">
                         <span>打开工具网页 (入口一)</span>
                         <i data-lucide="external-link" class="w-4 h-4"></i>
@@ -91,7 +91,7 @@
                             另一个备用的 ExHentai 登录 Cookie 提取通道。第一个获取不到可以试试这个
                         </p>
                     </div>
-                    <a href="https://exhentai-igneous-generator.pages.dev/" target="_blank" rel="noopener noreferrer" 
+                    <a href="https://exhentai-igneous-generator.pages.dev/" onclick="track('cookie-backup')" target="_blank" rel="noopener noreferrer" 
                        class="flex items-center justify-center space-x-2 bg-slate-700/50 hover:bg-emerald-600 text-slate-200 hover:text-white text-sm font-semibold py-3 px-4 rounded-xl transition-all duration-200">
                         <span>打开工具网页 (入口二)</span>
                         <i data-lucide="external-link" class="w-4 h-4"></i>
@@ -122,7 +122,7 @@
                             便捷的 Telegram 交易渠道。提供稳定可靠的里站特权账户购买与售前咨询服务，轻松解决新用户注册困难与里站限制。
                         </p>
                     </div>
-                    <a href="https://t.me/momo_pm" target="_blank" rel="noopener noreferrer" 
+                    <a href="https://t.me/momo_pm" onclick="track('telegram-shop')" target="_blank" rel="noopener noreferrer" 
                        class="flex items-center justify-center space-x-2 bg-slate-700/50 hover:bg-indigo-600 text-slate-200 hover:text-white text-sm font-semibold py-3 px-4 rounded-xl transition-all duration-200">
                         <span>前往 Telegram 联系</span>
                         <i data-lucide="external-link" class="w-4 h-4"></i>
@@ -142,7 +142,7 @@
                             除了购买里站账号外，您还可以在这里选择购买 GP/Credits/Hath
                         </p>
                     </div>
-                    <a href="https://shop.mhdy.net/" target="_blank" rel="noopener noreferrer" 
+                    <a href="https://shop.mhdy.net/" onclick="track('mhby-shop')" target="_blank" rel="noopener noreferrer" 
                        class="flex items-center justify-center space-x-2 bg-slate-700/50 hover:bg-indigo-600 text-slate-200 hover:text-white text-sm font-semibold py-3 px-4 rounded-xl transition-all duration-200">
                         <span>前往 垃圾小店</span>
                         <i data-lucide="external-link" class="w-4 h-4"></i>
@@ -163,6 +163,14 @@
     </footer>
 
     <script>
+        function track(tool) {
+            fetch("/api/click?tool=" + encodeURIComponent(tool), {
+                method: "GET",
+                keepalive: true,
+                cache: "no-store"
+            }).catch(() => {});
+        }
+
         lucide.createIcons();
     </script>
 </body>
